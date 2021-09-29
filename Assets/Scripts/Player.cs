@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     //Movement Variables
     public float jumpForce;
     public float moveSpeed;
+    private int numOfJumps = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,13 @@ public class Player : MonoBehaviour
     private void PlayerInput()
     {
         dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        if (Input.GetButtonDown("Jump"))//jump
+        {
+            if(numOfJumps>0)
+            {
+                Jump();
+            }
+        }
     }
 
     //Player Horizontal Movement
@@ -41,4 +49,18 @@ public class Player : MonoBehaviour
         myRb.velocity = new Vector3(dirX, myRb.velocity.y, dirZ);
     }
 
+    //Jump
+    private void Jump()
+    {
+        myRb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+        numOfJumps--;//decrease number of jumps
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="Platform")
+        {
+            numOfJumps = 1;
+        }
+    }
 }
