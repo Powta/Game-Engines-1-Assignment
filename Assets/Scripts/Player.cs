@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     //Movement Variables
     public float jumpForce;
     public float moveSpeed;
+    public float gravity;
+    public float fallMultiplier;
     private int numOfJumps = 0;
     // Start is called before the first frame update
     void Start()
@@ -46,13 +48,19 @@ public class Player : MonoBehaviour
     //Player Horizontal Movement
     private void Movement()
     {
+
         myRb.velocity = new Vector3(dirX, myRb.velocity.y, dirZ);
+        if (myRb.velocity.y < 0)
+        {
+            myRb.velocity += Vector3.up * Physics.gravity.y * fallMultiplier * Time.deltaTime; //incorporated fall multiplier to gravity
+        }
     }
 
     //Jump
     private void Jump()
     {
         myRb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+    
         numOfJumps--;//decrease number of jumps
     }
 
