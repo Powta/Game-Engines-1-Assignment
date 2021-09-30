@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
     //Player Horizontal Movement
     private void Movement()
     {
-
         myRb.velocity = new Vector3(dirX, myRb.velocity.y, dirZ);
         if (myRb.velocity.y < 0)
         {
