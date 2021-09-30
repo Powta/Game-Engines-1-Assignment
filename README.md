@@ -12,4 +12,4 @@ https://docs.unity3d.com/ScriptReference/Physics.html
 
 https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.html  
 
-INFR 3110U Tutorial
+INFR 3110U Tutorial Lab Lecture 2
