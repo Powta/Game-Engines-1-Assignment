@@ -4,6 +4,9 @@ A platformer game prototype. The scope of the prototype consists of having a win
 # Youtube Link to Demo
 https://www.youtube.com/watch?v=BFmKLzZiF_M
 
+# UML Diagram
+https://drive.google.com/file/d/13_T8pJCH3ex3ACpc_3IOhsItnbfNW3XF/view?usp=sharing
+
 # Sources to be Acknowledged
 https://docs.unity3d.com/ScriptReference/Physics.html
 
